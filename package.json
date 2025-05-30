@@ -1,0 +1,53 @@
+{
+  "name": "vscode-tempo",
+  "displayName": "Tempo",
+  "description": "Tempo choreographic programming language",
+  "version": "0.0.1",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tempo-lang/vscode-tempo"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "tempo",
+        "aliases": [
+          "Tempo",
+          "tempo"
+        ],
+        "extensions": [
+          ".tempo"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tempo",
+        "scopeName": "source.tempo",
+        "path": "./syntaxes/tempo.tmLanguage.json"
+      }
+    ]
+  },
+  "main": "out/extension",
+  "scripts": {
+    "prepublish": "tsc",
+    "compile": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "@types/vscode": "^1.100.0",
+    "typescript": "^5.8.3"
+  }
+}
