@@ -12,7 +12,7 @@ let client: LanguageClient;
 export function activate(context: ExtensionContext) {
   // const serverCommand = context.asAbsolutePath("server");
 
-  const goPath = path.join(context.extensionUri.path, "..");
+  const tempoPath = path.join(context.extensionUri.path, "..", "tempo");
 
   // If the extension is launched in debug mode then the debug server options are used
   // Otherwise the run options are used
@@ -23,8 +23,8 @@ export function activate(context: ExtensionContext) {
     },
     debug: {
       command: "go",
-      args: ["run", "./main.go", "lsp"],
-      options: { cwd: goPath },
+      args: ["run", "main.go", "lsp"],
+      options: { cwd: tempoPath },
     },
   };
 
