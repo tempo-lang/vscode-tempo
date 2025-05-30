@@ -1,7 +1,8 @@
 {
   "name": "vscode-tempo",
-  "displayName": "Tempo",
+  "displayName": "Tempo Language",
   "description": "Tempo choreographic programming language",
+  "publisher": "tempo-lang",
   "version": "0.0.1",
   "private": false,
   "repository": {
