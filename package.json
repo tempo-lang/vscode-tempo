@@ -2,6 +2,7 @@
   "name": "vscode-tempo",
   "displayName": "Tempo Language",
   "description": "Tempo choreographic programming language",
+  "icon": "vscode-icon.png",
   "publisher": "tempo-lang",
   "version": "0.0.1",
   "private": false,
