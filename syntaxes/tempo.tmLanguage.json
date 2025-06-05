@@ -3,6 +3,9 @@
 	"name": "Tempo",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#literals"
 		},
 		{
@@ -51,6 +54,35 @@
 							"match": "\\\\."
 						}
 					]
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"begin": "(//)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.comment.tempo"
+						}
+					},
+					"end": "[\\n\\r]",
+					"name": "comment.line.double-slash.tempo"
+				},
+				{
+					"begin": "(/\\*)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.comment.tempo"
+						}
+					},
+					"end": "(\\*/)",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.comment.tempo"
+						}
+					},
+					"name": "comment.block.tempo"
 				}
 			]
 		},
