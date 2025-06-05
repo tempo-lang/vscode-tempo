@@ -41,8 +41,22 @@
 					"name": "constant.language.boolean.tempo"
 				},
 				{
-					"match": "\\b[0-9]+\\b",
-					"name": "constant.numeric.integer.tempo"
+					"match": "([0-9]+)(\\.)([0-9]*)|([0-9]*)(\\.)([0-9]+)",
+					"captures": {
+						"1": {
+							"name": "constant.numeric.decimal.tempo"
+						},
+						"2": {
+							"name": "constant.numeric..tempo"
+						},
+						"3": {
+							"name": "constant.numeric.decimal.tempo"
+						}
+					}
+				},
+				{
+					"match": "\\b([0-9]+)\\b",
+					"name": "constant.numeric.decimal.tempo"
 				},
 				{
 					"name": "string.quoted.double.tempo",
