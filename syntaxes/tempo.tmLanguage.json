@@ -103,7 +103,7 @@
 		"keywords": {
 			"patterns": [
 				{
-					"match": "\\b(async|await|if|else|return)\\b",
+					"match": "\\b(async|await|if|else|while|return)\\b",
 					"captures": {
 						"1": {
 							"name": "keyword.control.flow.$1.tempo"
