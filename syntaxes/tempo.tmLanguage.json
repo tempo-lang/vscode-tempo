@@ -6,12 +6,6 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#literals"
-		},
-		{
-			"include": "#strings"
-		},
-		{
 			"include": "#variableDeclaration"
 		},
 		{
@@ -27,10 +21,10 @@
 			"include": "#expressions"
 		},
 		{
-			"include": "#operators"
+			"include": "#keywords"
 		},
 		{
-			"include": "#keywords"
+			"include": "#structField"
 		}
 	],
 	"repository": {
@@ -335,22 +329,36 @@
 					"name": "storage.type.local.tempo"
 				}
 			},
-			"end": "(\\})",
+			"end": "(\\{)",
 			"endCaptures": {
 				"1": {
-					"name": "punctuation.definition.end.bracket.curly.tempo"
+					"name": "punctuation.definition.begin.bracket.curly.tempo"
 				}
 			},
 			"patterns": [
-				{
-					"match": "\\{",
-					"name": "punctuation.definition.begin.bracket.curly.tempo"
-				},
 				{
 					"include": "#roleList"
 				},
 				{
 					"include": "#typeDeclaration"
+				}
+			]
+		},
+		"structField": {
+			"patterns": [
+				{
+					"begin": "([a-zA-Z][_a-zA-Z0-9]*)\\s*\\:",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.other.property.tempo"
+						}
+					},
+					"end": ";",
+					"patterns": [
+						{
+							"include": "#typeDeclaration"
+						}
+					]
 				}
 			]
 		},
@@ -386,6 +394,18 @@
 		"expressions": {
 			"patterns": [
 				{
+					"include": "#literals"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#operators"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
 					"match": "([_a-zA-Z0-9]+|[\\(\\[][_a-zA-Z0-9\\s,]+[\\)\\]])\\s*(\\-\\>)\\s*([_a-zA-Z0-9]+|[\\(\\[][_a-zA-Z0-9\\s,]+[\\)\\]])",
 					"captures": {
 						"1": {
@@ -406,6 +426,33 @@
 							]
 						}
 					}
+				},
+				{
+					"begin": "\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.begin.bracket.curly.tempo"
+						}
+					},
+					"end": "\\}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.end.bracket.curly.tempo"
+						}
+					},
+					"patterns": [
+						{
+							"match": "([a-zA-Z][_a-zA-Z0-9]*)\\s*\\:",
+							"captures": {
+								"1": {
+									"name": "variable.other.property.tempo"
+								}
+							}
+						},
+						{
+							"include": "#expressions"
+						}
+					]
 				}
 			]
 		}
