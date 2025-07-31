@@ -4,14 +4,14 @@
   "description": "Tempo choreographic programming language",
   "icon": "vscode-icon.png",
   "publisher": "tempo-lang",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/tempo-lang/vscode-tempo"
   },
   "engines": {
-    "vscode": "^1.100.0"
+    "vscode": "^1.102.0"
   },
   "categories": [
     "Programming Languages"
@@ -48,8 +48,8 @@
     "vscode-languageclient": "^9.0.1"
   },
   "devDependencies": {
-    "@types/node": "^22.15.17",
-    "@types/vscode": "^1.100.0",
+    "@types/node": "^24.1.0",
+    "@types/vscode": "^1.102.0",
     "typescript": "^5.8.3"
   }
 }
